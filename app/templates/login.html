@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <form action="/autenticar">
+        Login: <input type="text" name="usuario"><br/>
+        Senha: <input type="password" name="senha">
+        <button type="submit">Login</button>
+    </form>
+{% endblock %}
