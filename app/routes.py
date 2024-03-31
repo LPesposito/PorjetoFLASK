@@ -3,10 +3,10 @@ from flask import render_template
 from flask import request
 
 @app.route('/')
-@app.route('/index', defaults={'nome':'User'})
+@app.route('/index', defaults={"nome":"User"})
 @app.route('/index/<nome>')
 def index(nome):
-    return render_template('index.html',nome=nome)
+    return render_template('index.html', nome = nome)
 
 @app.route('/contato')
 def contato():
@@ -20,4 +20,4 @@ def login():
 def autenticar():
     usuario = request.args.get('usuario')
     senha = request.args.get('senha')
-    return f'usuario:{usuario}\nsenha:{senha}'
+    return f'usuario:{usuario} senha:{senha}'
