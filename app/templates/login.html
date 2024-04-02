@@ -1,9 +1,19 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <form action="/autenticar">
+
+    {% with message = get_flashed_messages() %}
+    {% if message %}
+        <div>{% for i in message %}
+                {{i}}
+            {% endfor %}
+        </div>
+    {% endif %}
+    <form action="/autenticar" method = "post">
         Login: <input type="text" name="usuario"><br/>
         Senha: <input type="password" name="senha">
         <button type="submit">Login</button>
     </form>
+
+    {% endwith %}
 {% endblock %}
